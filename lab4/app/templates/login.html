@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %} Log In{% endblock %}
+
+{% block body %}
+<body>
+    <div style="padding: 20px">
+        <div style="padding: 20px;">
+            <div>
+                <h4>Login</h4>
+            </div>
+            <div>
+                <form action={{ url_for('login') }} method="post">
+                    <div>
+                        <input placeholder="Name" type="text" name="name">
+                    </div>
+                    <div>
+                        <input placeholder="Password" type="text" name="password">
+                    </div>
+                    <div>
+                        <button>Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}
