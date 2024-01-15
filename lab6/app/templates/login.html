@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% from "_formhelpers.html" import render_field %}
+{% block title %} Log In{% endblock %}
+
+{% block body %}
+
+<body>
+        <div style="padding: 20px">
+          <div style="padding: 20px;">
+                <div>
+                    <div>
+                        <img alt="..." src="{{ url_for('static', filename='images/happi_people.jpg') }}" class="card-img">
+                        <h4>Login</h4>
+                    </div>
+                    <div>
+                        <form method="POST" action="{{ url_for('login') }}" novalidate>
+                            {{ form.csrf_token }}
+                                {{ render_field(form.username)}}
+                                {{ render_field(form.password)}}
+                            <div>
+                                <label>
+                                    {{ form.remember(class="") }}
+                                    <span></span>Remember me
+                                </label>
+                            </div>
+                            <div>
+                                {{ form.submit() }}
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </div>
+{% endblock %}
+
