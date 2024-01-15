@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Event List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="container mt-4">
+<h1 class="mb-4">Sports Event List</h1>
+<h3>Add sports event</h3>
+<div class="row">
+    <div class="col-md-6">
+        <form method="post" action="{{ url_for('sports_events.sports_events') }}" enctype="application/json">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <input type="text" class="form-control" name="country" required>
+            </div>
+
+            <div class="form-group">
+                <label for="year">Year:</label>
+                <input type="number" class="form-control" name="year" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Add Sports Event</button>
+        </form>
+    </div>
+</div>
+<br>
+<div class="mt-4">
+    <h3>Sports Events</h3>
+    <ul class="list-group">
+        {% for sports_event in sports_events %}
+        <li class="list-group-item">
+            {{ sports_event.name }} - {{ sports_event.year }} - {{ sports_event.country }}
+            <form method="get" action="{{ url_for('sports_events.delete_sports_event', sports_event_id=sports_event.id) }}"
+                  style="display:inline;">
+                <button type="submit" class="btn btn-danger btn-sm float-right">Delete</button>
+            </form>
+            <a href="{{ url_for('sports_events.update_sports_event', sports_event_id=sports_event.id) }}" class="btn btn-primary btn-sm float-right mr-2">Edit</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<br><br>
+</body>
+</html>

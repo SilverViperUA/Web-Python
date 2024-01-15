@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Sports Event</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="container mt-4">
+<h1 class="mb-4">Edit Sports Event</h1>
+
+<form method="post" action="{{ url_for('sports_events.update_sports_event', sports_event_id=sports_event.id) }}">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" name="name" value="{{ sports_event.name }}" required>
+    </div>
+
+    <div class="form-group">
+        <label for="year">Year:</label>
+        <input type="number" class="form-control" name="year" value="{{ sports_event.year }}" required>
+    </div>
+
+    <div class="form-group">
+        <label for="country">Country:</label>
+        <input type="text" class="form-control" name="country" value="{{ sports_event.country }}" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update Sports Event</button>
+</form>
+
+<br><br>
+<a href="{{ url_for('sports_events.get_sports_events') }}">Back to Sports Event List</a>
+</body>
+</html>

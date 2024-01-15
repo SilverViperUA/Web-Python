@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Student</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="container mt-4">
+<h1 class="mb-4">Edit Student</h1>
+
+<form method="post" action="{{ url_for('students.update_student', student_id=student.id) }}">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" name="name" value="{{ student.name }}" required>
+    </div>
+
+    <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="number" class="form-control" name="age" value="{{ student.age }}" required>
+    </div>
+
+    <div class="form-group">
+        <label for="faculty">Faculty:</label>
+        <input type="text" class="form-control" name="faculty" value="{{ student.faculty }}" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update Student</button>
+</form>
+
+<br><br>
+<a href="{{ url_for('students.get_students') }}">Back to Student List</a>
+</body>
+</html>
