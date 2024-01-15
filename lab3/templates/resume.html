@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    {% extends 'base.html' %}
+
+    {% block title %}Головна{% endblock %}
+
+    {% block content %}
+        <div class="container">
+            <div class="wrapper">
+              <h2>Моє Резюме</h2>
+              <p>Тут може бути ваше резюме</p>
+            </div>
+          <img src="{{ url_for('static', filename='images/NORMAL LOGO X.png') }}" alt="Example Image">
+        </div>
+          <table>
+            <tr>
+              <th>Компанія</th>
+              <th>Досвід роботи</th>
+              <th>Посада</th>
+            </tr>
+            <tr>
+              <td>Stun</td>
+              <td>1 рік</td>
+              <td>Front-end Dev</td>
+            </tr>
+            <tr>
+              <td>Zeed</td>
+              <td>4 місяці</td>
+              <td>Front-end Dev</td>
+          </table>
+    {% endblock %}
+</body>
+</html>

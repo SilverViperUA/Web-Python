@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Illia Senkiv{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+    <header>
+        <div>
+            <h2>Illia Senkiv</h2>
+        </div>
+         <nav>
+            <ul>
+                <li><a href="/">Головна</a></li>
+                <li><a href="/resume">Резюме</a></li>
+                <li><a href="/portfolio">Портфоліо</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer>
+        <p>Senkiv</p>
+        <p>OS: {{ os_info }}</p>
+        <p>User Agent: {{ user_agent }}</p>
+        <p>Time: {{ current_time }}</p>
+    </footer>
+
+
+</body>
+</html>
