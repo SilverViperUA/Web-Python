@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div>
+     <div>
+        <div>
+            <h4>Welcome</h4>
+            <h2>My name's <span style="color: red;">Illia Senkiv</span></h2>
+            <h2></h2>
+        </div>
+    </div>
+    <div>
+        <img style="width: 350px;" src="{{ url_for('static', filename='images/img2.jpg.png') }}" alt="">
+    </div>
+</div>
+
+
+{% include "footer.html" %}
+
+{% endblock %}
