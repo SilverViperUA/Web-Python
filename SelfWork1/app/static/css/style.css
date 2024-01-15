@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+}
+.custom-container {
+    height: 70vh;
+    max-width: 70%;
+    background-color: #523f7e;
+    margin-top: 5%;
+}
+
+
+.table-container {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table th {
+    background: #006280;
+    color: #fff;
+}
+
+table th, table td {
+    text-align: center;
+    padding: 8px;
+    font-weight: bold;
+}
+
+.nav .container {
+    display: flex;
+    flex-direction: column;
+}
+.nav .container ul {
+    display: flex;
+    gap: 25px;
+    list-style-type: none;
+    margin: 0;
+    background: #7f0000;
+}
+.nav .container ul a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+
+}
+
+.alert {
+    min-height: 20px;
+    padding: 15px 10px;
+    border-radius: 15px;
+    width: 20%;
+    font-size: 20px;
+    background: #fff;
+    position: fixed;
+    z-index: 9999;
+    top: 10px;
+}
+
+.alert-danger{
+    color: red;
+}
+input {
+    height: 25px;
+    width: 150px;
+    padding: 10px;
+    font-size: 16px;
+}
+input[type="submit"] {
+    height: 50px;
+    width: 100%;
+}
+form {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding: 25px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin-left: 30px;
+}
+.form-group {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.form-check-input {
+    width: auto;
+    justify-content: flex-start;
+}
+h4 {
+    font-size: 24px;
+}
+.form-check-label {
+    width: auto;
+    justify-content: flex-start!important;
+    gap: 10px;
+    font-size: 18px;
+}
+.form-check label{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
