@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+<h1>Register</h1>
+<form method="POST" action="/">
+    <label for="first_name">First Name:</label>
+    <input type="text" name="first_name" id="first_name" required><br><br>
+
+    <label for="last_name">Last Name:</label>
+    <input type="text" name="last_name" id="last_name" required><br><br>
+
+    <label>Choose Country:</label>
+    <input type="radio" name="country" value="USA" id="USA">
+    <label for="USA">USA</label>
+    <input type="radio" name="country" value="Norway" id="Norway">
+    <label for="Norway">Norway</label>
+    <input type="radio" name="country" value="Finland" id="Finland">
+    <label for="Finland">Finland</label><br><br>
+
+    <input type="submit" value="Register">
+</form>
+
+{% if first_name and last_name and country %}
+<h2>Your data:</h2>
+<p>First name: {{ first_name }}</p>
+<p>Last name: {{ last_name }}</p>
+<p>Country: {{ country }}</p>
+<hr>
+{% endif %}
+</body>
+</html>
